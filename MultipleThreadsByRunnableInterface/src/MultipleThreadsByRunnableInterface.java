@@ -1,9 +1,9 @@
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class printHelloAll extends Thread{
+public class MultipleThreadsByRunnableInterface implements Runnable{
     private final String message;
-    public printHelloAll(String message){
+    public MultipleThreadsByRunnableInterface(String message){
         this.message = message;
     }
     @Override
@@ -13,7 +13,7 @@ public class printHelloAll extends Thread{
 }
 class Main{
     public static void main(String[] args){
-        printHelloAll print = new printHelloAll("Hello All");
+        MultipleThreadsByRunnableInterface print = new MultipleThreadsByRunnableInterface("Hello India");
         ExecutorService exe = Executors.newFixedThreadPool(5);
 
         for(int i=0; i<5; i++){
